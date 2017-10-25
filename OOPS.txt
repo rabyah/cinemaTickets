@@ -1,0 +1,123 @@
+Encapsulation:
+Placing variables and methods inside a single unit. 
+Encapsulation protects information of an object and can be implemented using Class.
+
+The variables and methods are encapsulated inside the class Car:
+
+class Car {
+
+	//variables:
+	
+	int modelYear;
+	String carMake;
+
+	public Car (int year, String make) {
+		modelYear = year;
+		carMake = make;
+	}
+	
+	//methods:
+	
+	public void drive(int distanceTravelled) {
+		System.out.println("Your car drove " + distanceTravelled + " miles.");
+	}
+	
+	public static void main(String[] args) {
+		Car myCar = new Car(2017, "BMW");
+		myCar.drive(500);
+	}
+}
+
+
+Inheritance:
+When a class inherits/shares information from another class.
+Allows class to use functionality defined in another class. 
+
+class Vehicles {
+
+	String vehicleType;
+	
+	public Vehicle (String type) {
+		vehicleType = type;
+	}
+	
+	public static void main(String[] args) {
+		Vehicles car = new Vehicles("Car");
+		Vehicles truck = new Vehicles("Truck");	
+	}
+
+}
+
+class Car extends Vehicles {
+
+	//variables:
+	
+	int modelYear;
+	String carMake;
+
+	public Car (int year, String make) {
+		modelYear = year;
+		carMake = make;
+	}
+	
+	//methods:
+	
+	public void drive(int distanceTravelled) {
+		System.out.println("Your car drove " + distanceTravelled + " miles.");
+	}
+	
+	public static void main(String[] args) {
+		Car myCar = new Car(2017, "BMW");
+		myCar.drive(500);
+	}
+}
+
+
+Abstraction:
+Hiding unnecessary properties of objects and showing only essential features to communicate.
+
+abstract class phone {
+	//my phone number is unique to me and not everyone needs to know it so it can be hidden
+	public abstract void phoneNumber(); 
+	public void call() {
+		System.out.println("Your phone is ringing.");
+	}
+}
+
+class myPhone extends phone {
+	//this is my phone and I need to know my phone number so I have defined it
+	public void phoneNumber() {
+		System.out.println("My phone number is 0387246");
+	}
+}
+
+
+Polymorphism:
+Defining an object with the same identity, 
+which shows different behaviours when communicating with different types of objects.
+
+class Animal {
+	public void sound() {
+		System.out.println("The animal is making a sound");
+	}
+}
+
+class Cat extends Animal {
+	public void sound() {
+		System.out.println("Meow!");
+	}
+	public static void main(String, args[]) {
+		Animal cat = new Cat();
+		cat.sound();
+	}
+}
+
+class Dog extends Animal {
+	public void sound() {
+		System.out.println("Woof!");
+	}
+	public static void main(String, args[]) {
+		Animal dog = new Dog();
+		dog.sound();
+	}
+}
